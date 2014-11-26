@@ -31,5 +31,3 @@ std::string stringFromResource(const char* _path) {
     file.close();
     return into;
 }
-
-#endif //PLATFORM_RPI
