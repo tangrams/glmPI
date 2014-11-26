@@ -1,4 +1,4 @@
-EXE = piFrag
+EXE = app.out
 
 SOURCES := $(wildcard src/*.cpp)
 HEADERS := $(wildcard src/*.h)
