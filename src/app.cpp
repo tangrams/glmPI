@@ -7,6 +7,14 @@
 #include "platform.h"
 #include "view/view.h"
 
+#ifdef PLATFORM_RPI
+//  OpenGL ES 2.0
+//
+#include "GLES2/gl2.h"
+#include "EGL/egl.h"
+#include "EGL/eglext.h"
+#endif
+
 std::shared_ptr<View> m_view;
 
 void initialize() {
