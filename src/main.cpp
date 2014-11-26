@@ -13,9 +13,9 @@
 #include <unistd.h>
 #include <sys/shm.h>
 
+#include "gl.h"
 #include "app.h"
 #include "platform.h"
-#include "gl.h"
 
 //==============================================================================
 int main(int argc, char **argv){

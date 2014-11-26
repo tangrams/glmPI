@@ -4,9 +4,9 @@ SOURCES := $(wildcard src/*.cpp)
 HEADERS := $(wildcard src/*.h)
 OBJECTS := $(SOURCES:.cpp=.o)
 
-INCLUDES+=-I$(SDKSTAGE)/opt/vc/include/ -I$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -I./
+INCLUDES+=-I$(SDKSTAGE)/opt/vc/include/ -I$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -I./ -Iinclude/
 
-CFLAGS+= -DSTANDALONE \
+CFLAGS+= -std=c++11 -DSTANDALONE \
 		-D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS \
 		-DTARGET_POSIX \
 		-D_LINUX -fPIC -DPIC -D_REENTRANT \
