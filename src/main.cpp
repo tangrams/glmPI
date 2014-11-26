@@ -13,6 +13,10 @@
 #include <unistd.h>
 #include <sys/shm.h>
 
+#include "GLES2/gl2.h"
+#include "EGL/egl.h"
+#include "EGL/eglext.h"
+
 #include "gl.h"
 #include "app.h"
 #include "platform.h"
