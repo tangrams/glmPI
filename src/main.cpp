@@ -1,3 +1,5 @@
+#define PLATFORM_RPI
+
 #include <stdio.h>
 #include <fcntl.h>
 #include <stdlib.h>
@@ -10,6 +12,10 @@
 #include <time.h>
 #include <unistd.h>
 #include <sys/shm.h>
+
+#include "app.h"
+#include "platform.h"
+#include "gl.h"
 
 //==============================================================================
 int main(int argc, char **argv){
