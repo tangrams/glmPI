@@ -59,7 +59,7 @@ int main(int argc, char **argv){
     assert(display!=EGL_NO_DISPLAY);
     
     // initialize the EGL display connection
-    result = eglInitialize(statedisplay, NULL, NULL);
+    result = eglInitialize(display, NULL, NULL);
     assert(EGL_FALSE != result);
     
     // get an appropriate EGL frame buffer configuration
