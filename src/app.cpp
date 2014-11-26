@@ -11,13 +11,13 @@
 #include "platform.h"
 #include "view/view.h"
 
-std::shared_ptr<View> m_view;
+// std::shared_ptr<View> m_view;
 
 void initialize() {
     logMsg("%s\n", "initialize");
 
     // Create view
-    m_view = std::make_shared<View>();
+    // m_view = std::make_shared<View>();
 
     //  
     //
@@ -43,9 +43,9 @@ void resize(int _newWidth, int _newHeight) {
     
     glViewport(0, 0, _newWidth, _newHeight);
 
-    if (m_view) {
-        m_view->setAspect(_newWidth, _newHeight);
-    }
+    // if (m_view) {
+    //     m_view->setAspect(_newWidth, _newHeight);
+    // }
 }
 
 void update(float _dt) {
