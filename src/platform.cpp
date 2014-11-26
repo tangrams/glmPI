@@ -1,4 +1,4 @@
-#ifdef PLATFORM_RPI
+#pragma once
 
 #include <stdio.h>
 #include <stdarg.h>
