@@ -1,15 +1,15 @@
 #include "app.h"
 
+#include "GLES2/gl2.h"
+#include "EGL/egl.h"
+#include "EGL/eglext.h"
+
 #include <memory>
 #include <utility>
 #include <cmath>
 
 #include "platform.h"
 #include "view/view.h"
-
-#include "GLES2/gl2.h"
-#include "EGL/egl.h"
-#include "EGL/eglext.h"
 
 std::shared_ptr<View> m_view;
 
@@ -56,8 +56,8 @@ void render() {
     // Set up openGL for new frame
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    glm::dmat4 view = m_view->getViewMatrix();
-    glm::dmat4 viewProj = m_view->getViewProjectionMatrix();
+    // glm::dmat4 view = m_view->getViewMatrix();
+    // glm::dmat4 viewProj = m_view->getViewProjectionMatrix();
 
     //
     //
