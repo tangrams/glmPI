@@ -12,7 +12,7 @@ CFLAGS+= -std=c++11 -DSTANDALONE \
 		-D_LINUX -fPIC -DPIC -D_REENTRANT \
 		-D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 \
 		-U_FORTIFY_SOURCE -Wall -g\
-		-DOMX -DOMX_SKIP64BIT -ftree-vectorize -pipe \
+		-ftree-vectorize -pipe \
 		-DHAVE_LIBBCM_HOST -DUSE_EXTERNAL_LIBBCM_HOST -DUSE_VCHIQ_ARM -Wno-psabi -fpermissive
 
 LDFLAGS+=-L$(SDKSTAGE)/opt/vc/lib/ \
