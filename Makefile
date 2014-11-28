@@ -20,7 +20,6 @@ LDFLAGS+=-L$(SDKSTAGE)/opt/vc/lib/ \
 		-lbcm_host \
 		-lvcos \
 		-lvchiq_arm \
-		-lpthread \
 		-lrt
 
 all: $(EXE)

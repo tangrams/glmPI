@@ -65,11 +65,7 @@ void ShaderProgram::use() const {
 }
 
 bool ShaderProgram::buildFromSourceStrings(const std::string& _fragSrc, const std::string& _vertSrc) {
-
-    //  TODO:
-    //          - This is a hardcode injection
-    //          - Here will happen the real shader injection
-    
+ 
     std::string glslHeader = "#ifdef GL_ES\nprecision mediump float;\n#endif\n\n";
     std::string vertSrc = glslHeader + _vertSrc;
     std::string fragSrc = glslHeader + _fragSrc;
