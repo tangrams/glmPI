@@ -7,7 +7,7 @@ OBJECTS := $(SOURCES:.cpp=.o)
 INCLUDES+=-I$(SDKSTAGE)/opt/vc/include/ -I$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -Isrc/ -Iinclude/
 
 CFLAGS+= -std=c++11 -Wall -g \
-	 -DSTANDALONE -DTARGET_POSIX -DPLATFORM_RPI \
+	 -DPLATFORM_RPI \
 	 -DHAVE_LIBBCM_HOST -DUSE_EXTERNAL_LIBBCM_HOST -DUSE_VCHIQ_ARM \
 	 -Wno-psabi -fpermissive
 
