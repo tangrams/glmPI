@@ -1,10 +1,10 @@
 EXE = app.out
 
-SOURCES := $(wildcard src/*.cpp) $(wildcard src/view/*.cpp)
-HEADERS := $(wildcard src/*.cpp) $(wildcard src/view/*.h)
+SOURCES := $(wildcard src/*.cpp) $(wildcard src/view/*.cpp) $(wildcard src/util/*.cpp)
+HEADERS := $(wildcard src/*.cpp)  $(wildcard src/view/*.cpp) $(wildcard src/util/*.h)
 OBJECTS := $(SOURCES:.cpp=.o)
 
-INCLUDES+=-I$(SDKSTAGE)/opt/vc/include/ -I$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -I./ -Iinclude/
+INCLUDES+=-I$(SDKSTAGE)/opt/vc/include/ -I$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -Isrc/ -Iinclude/
 
 CFLAGS+= -std=c++11 -DSTANDALONE \
 		-D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS \
@@ -34,7 +34,7 @@ $(EXE): $(OBJECTS) $(HEADERS)
 	$(CXX) -o $@ -Wl,--whole-archive $(OBJECTS) $(LDFLAGS) -Wl,--no-whole-archive -rdynamic
 
 clean:
-	@rm -rvf $(EXE) src/*.o src/view/*.o
+	@rm -rvf $(EXE) src/*.o src/view/*.o src/util/*.o
 
 install:
 	@cp $(EXE) /usr/local/bin

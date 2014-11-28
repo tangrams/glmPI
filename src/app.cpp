@@ -10,8 +10,14 @@
 
 #include "platform.h"
 #include "view/view.h"
+#include "util/vertexLayout.h"
+#include "util/vboMesh.h"
+#include "util/shaderProgram.h"
 
 std::shared_ptr<View> m_view;
+std::shared_ptr<VertexLayout> m_vertexLayout;
+std::shared_ptr<VboMesh> m_geometry;
+std::shared_ptr<ShaderProgram> m_shaderProgram;
 
 void initialize() {
     logMsg("%s\n", "initialize");
@@ -19,8 +25,13 @@ void initialize() {
     // Create view
     m_view = std::make_shared<View>();
 
-    //  
-    //
+    m_vertexLayout = std::shared_ptr<VertexLayout>(new VertexLayout({
+			    {"a_position",3,GL_FLOAT,false,0},
+			    {"a_color",4,GL_FLOAT,false,0},
+			    {"a_normal",3,GL_FLOAT,false,0},
+			    {"a_texcoord",2,GL_FLOAT,false,0}
+			}));
+    m_geometry = std::shared_ptr<VboMesh>(new VboMesh(m_vertexLayout,GL_TRIANGLES));
     
     // Set up openGL state
     glDisable(GL_BLEND);
