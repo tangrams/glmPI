@@ -17,7 +17,6 @@ CFLAGS+= -std=c++11 -DSTANDALONE \
 
 LDFLAGS+=-L$(SDKSTAGE)/opt/vc/lib/ \
 		-lGLESv2 -lEGL \
-		-lopenmaxil \
 		-lbcm_host \
 		-lvcos \
 		-lvchiq_arm \
