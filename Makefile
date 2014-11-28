@@ -6,14 +6,12 @@ OBJECTS := $(SOURCES:.cpp=.o)
 
 INCLUDES+=-I$(SDKSTAGE)/opt/vc/include/ -I$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -Isrc/ -Iinclude/
 
-CFLAGS+= -std=c++11 -DSTANDALONE \
-		-D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS \
-		-DTARGET_POSIX \
-		-D_LINUX -fPIC -DPIC -D_REENTRANT \
-		-D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 \
-		-U_FORTIFY_SOURCE -Wall -g\
-		-ftree-vectorize -pipe \
-		-DHAVE_LIBBCM_HOST -DUSE_EXTERNAL_LIBBCM_HOST -DUSE_VCHIQ_ARM -Wno-psabi -fpermissive
+CFLAGS+= -std=c++11 \
+	 -DSTANDALONE -DTARGET_POSIX -DPLATFORM_RPI \
+	 -U_FORTIFY_SOURCE -Wall -g \
+	 -ftree-vectorize -pipe \
+	 -DHAVE_LIBBCM_HOST -DUSE_EXTERNAL_LIBBCM_HOST -DUSE_VCHIQ_ARM \
+	 -Wno-psabi -fpermissive
 
 LDFLAGS+=-L$(SDKSTAGE)/opt/vc/lib/ \
 		-lGLESv2 -lEGL \

@@ -19,7 +19,6 @@
 #define glDepthRangef glDepthRange
 #endif
 
-#define PLATFORM_RPI
 #ifdef PLATFORM_RPI
 //  Broadcom hardware library for hijacking the GPU card with out window manager
 //
