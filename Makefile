@@ -1,7 +1,7 @@
 EXE = app.out
 
-SOURCES := $(wildcard src/*.cpp)
-HEADERS := $(wildcard src/*.h)
+SOURCES := $(wildcard src/*.cpp) $(wildcard src/view/*.cpp)
+HEADERS := $(wildcard src/*.cpp) $(wildcard src/view/*.h)
 OBJECTS := $(SOURCES:.cpp=.o)
 
 INCLUDES+=-I$(SDKSTAGE)/opt/vc/include/ -I$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux -I./ -Iinclude/
@@ -34,7 +34,7 @@ $(EXE): $(OBJECTS) $(HEADERS)
 	$(CXX) -o $@ -Wl,--whole-archive $(OBJECTS) $(LDFLAGS) -Wl,--no-whole-archive -rdynamic
 
 clean:
-	@rm -rvf $(EXE) src/*.o
+	@rm -rvf $(EXE) src/*.o src/view/*.o
 
 install:
 	@cp $(EXE) /usr/local/bin

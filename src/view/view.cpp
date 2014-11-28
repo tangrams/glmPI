@@ -1,5 +1,4 @@
 #include "view.h"
-#include "platform.h"
 #include "glm/gtx/string_cast.hpp"
 
 View::View(float _width, float _height) {    
@@ -35,9 +34,7 @@ const glm::dmat4 View::getViewProjectionMatrix() const {
 }
 
 glm::dmat2 View::getBoundsRect() const {
-
     double hw = m_width * 0.5;
     double hh = m_height * 0.5;
     return glm::dmat2(m_pos.x - hw, m_pos.y - hh, m_pos.x + hw, m_pos.y + hh);
-
 }
