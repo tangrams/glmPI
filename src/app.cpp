@@ -31,8 +31,8 @@ void initialize() {
 			    {"a_normal",3,GL_FLOAT,false,0},
 			    {"a_texcoord",2,GL_FLOAT,false,0}
 			}));
-    m_geometry = std::shared_ptr<VboMesh>(new VboMesh(m_vertexLayout,GL_TRIANGLES));
-    
+    m_geometry = std::shared_ptr<VboMesh>(new VboMesh(m_vertexLayout,GL_TRIANGLES));	
+
     // Set up openGL state
     glDisable(GL_BLEND);
     glDisable(GL_STENCIL_TEST);
